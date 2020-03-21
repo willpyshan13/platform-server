@@ -19,5 +19,22 @@ CREATE TABLE `tb_token` (
   UNIQUE INDEX (`token`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户Token';
 
+-- 用户Token表
+CREATE TABLE `tb_app` (
+                          `app_id` bigint NOT NULL AUTO_INCREMENT,
+                          `app_name` varchar(255) NOT NULL COMMENT 'appName',
+                          `version` varchar(255) NOT NULL COMMENT 'version',
+                          `client` varchar(255) NOT NULL COMMENT 'client',
+                          `channel` varchar(255) NOT NULL COMMENT 'channel',
+                          `platform` varchar(255) NOT NULL COMMENT 'platform',
+                          `download_url` varchar(255) NOT NULL COMMENT 'downloadUrl',
+                          `update_log` varchar(255) NOT NULL COMMENT 'updateLog',
+                          `token` varchar(255) NOT NULL COMMENT 'token',
+                          `create_time` datetime COMMENT '创建时间',
+                          `update_time` datetime COMMENT '更新时间',
+                          PRIMARY KEY (`app_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='tb_app';
+
+
 -- 账号：13612345678  密码：admin
 INSERT INTO `tb_user` (`username`, `mobile`, `password`, `create_time`) VALUES ('mark', '13612345678', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', '2017-03-23 22:37:41');
