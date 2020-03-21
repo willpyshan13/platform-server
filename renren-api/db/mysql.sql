@@ -24,16 +24,24 @@ CREATE TABLE `tb_app` (
                           `app_id` bigint NOT NULL AUTO_INCREMENT,
                           `app_name` varchar(255) NOT NULL COMMENT 'appName',
                           `version` varchar(255) NOT NULL COMMENT 'version',
-                          `client` varchar(255) NOT NULL COMMENT 'client',
-                          `channel` varchar(255) NOT NULL COMMENT 'channel',
                           `platform` varchar(255) NOT NULL COMMENT 'platform',
+                          `channel` varchar(255) NOT NULL COMMENT 'channel',
+                          `client_id` bigint NOT NULL COMMENT 'client_id',
                           `download_url` varchar(255) NOT NULL COMMENT 'downloadUrl',
                           `update_log` varchar(255) NOT NULL COMMENT 'updateLog',
-                          `token` varchar(255) NOT NULL COMMENT 'token',
-                          `create_time` datetime COMMENT '创建时间',
-                          `update_time` datetime COMMENT '更新时间',
+                          `create_time` long COMMENT '创建时间',
+                          `update_time` long COMMENT '更新时间',
                           PRIMARY KEY (`app_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='tb_app';
+
+-- 用户Token表
+CREATE TABLE `tb_client` (
+                          `client_id` bigint NOT NULL AUTO_INCREMENT,
+                          `client_name` varchar(255) NOT NULL COMMENT 'client_name',
+                          `create_time` long COMMENT '创建时间',
+                          `update_time` long COMMENT '更新时间',
+                          PRIMARY KEY (`client_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='tb_client';
 
 
 -- 账号：13612345678  密码：admin

@@ -11,16 +11,23 @@ import io.renren.service.AppService;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
+import java.util.function.Function;
 
 @Service("appService")
 public class AppServiceImpl extends ServiceImpl<AppDao, AppEntity> implements AppService {
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
+        String platform = (String) params.get("platform");
+        String clientId = (String)params.get("clientId");
         IPage<AppEntity> page = this.page(
                 new PageQuery<AppEntity>().getPage(params),
-                new QueryWrapper<>());
-
-
+                new QueryWrapper<AppEntity>().eq("platform",platform).and(new Function<QueryWrapper<AppEntity>, QueryWrapper<AppEntity>>() {
+                    @Override
+                    public QueryWrapper<AppEntity> apply(QueryWrapper<AppEntity> appEntityQueryWrapper) {
+                        appEntityQueryWrapper.eq("client_id",clientId);
+                        return appEntityQueryWrapper;
+                    }
+                }));
         return new PageUtils(page);
     }
 }

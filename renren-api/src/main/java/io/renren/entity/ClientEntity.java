@@ -10,12 +10,9 @@ package io.renren.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Date;
 
 
 /**
@@ -24,44 +21,19 @@ import java.util.Date;
  * @author will
  */
 @Data
-@TableName("tb_app")
-public class AppEntity implements Serializable {
+@TableName("tb_client")
+public class ClientEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * 用户ID
 	 */
 	@TableId
-	private Long appId;
+	private Long clientId;
 	/**
 	 * 用户名
 	 */
-	private String appName;
-	/**
-	 * 版本号
-	 */
-	private String version;
-	/**
-	 * android、ios
-	 */
-	private String platform;
-	/**
-	 * 渠道
-	 */
-	private String channel;
-	/**
-	 * 平台
-	 */
-	private Long clientId;
-	/**
-	 * 下载链接
-	 */
-	private String downloadUrl;
-
-	/**
-	 * 更新日志
-	 */
-	private String updateLog;
+	private String clientName;
 
 	/**
 	 * 创建时间
@@ -72,5 +44,4 @@ public class AppEntity implements Serializable {
 	 * 更新时间
 	 */
 	private Long updateTime;
-
 }

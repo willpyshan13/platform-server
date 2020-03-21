@@ -8,11 +8,14 @@
 
 package io.renren.form;
 
+import lombok.Data;
+
 /**
  * app表单
  *
  * @author
  */
+@Data
 public class AppForm {
     /**
      * 用户名
@@ -25,7 +28,7 @@ public class AppForm {
     /**
      * android==1、ios==2
      */
-    private int client;
+    private String client;
     /**
      * 渠道
      */
@@ -43,5 +46,4 @@ public class AppForm {
      * 更新日志
      */
     private String update_log;
-
 }
