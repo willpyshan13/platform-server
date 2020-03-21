@@ -119,19 +119,6 @@ renren-security
 
 <br>
 
-**如何交流、反馈、参与贡献？** 
-- 开发文档：https://www.renren.io/guide/security
-- 官方社区：https://www.renren.io/community
-- gitee仓库：https://gitee.com/renrenio/renren-security
-- github仓库：https://github.com/renrenio/renren-security
-- [人人开源](https://www.renren.io)：https://www.renren.io   
-- 官方QQ群：324780204、145799952
-- 如需关注项目最新动态，请Watch、Star项目，同时也是对项目最好的支持
-- 技术讨论、二次开发等咨询、问题和建议，请移步到官方社区，我会在第一时间进行解答和回复！
-- 微信扫码并关注【人人开源】，获得项目最新动态及更新提醒<br>
-![输入图片说明](http://cdn.renren.io/47c26201804031918312618.jpg "在这里输入图片标题")
-<br>
-<br>
 
 **接口文档效果图：** 
 ![输入图片说明](http://cdn.renren.io/img/c8dae596146248d8b4d0639738c2932b "在这里输入图片标题")
@@ -154,5 +141,3 @@ renren-security
 ![输入图片说明](http://cdn.renren.io/img/5d8e7243d30a4421b90f15394b6d1ccd "在这里输入图片标题")
 
 <br>
-
-![捐赠](http://cdn.renren.io/donate.jpg "捐赠") 
