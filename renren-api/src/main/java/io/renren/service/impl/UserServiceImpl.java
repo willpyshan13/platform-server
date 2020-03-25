@@ -38,7 +38,7 @@ public class UserServiceImpl extends ServiceImpl<UserDao, UserEntity> implements
 
 	@Override
 	public Map<String, Object> login(LoginForm form) {
-		UserEntity user = queryByMobile(form.getMobile());
+		UserEntity user = queryByMobile(form.getUserName());
 		Assert.isNull(user, "手机号或密码错误");
 
 		//密码错误
@@ -50,8 +50,10 @@ public class UserServiceImpl extends ServiceImpl<UserDao, UserEntity> implements
 		TokenEntity tokenEntity = tokenService.createToken(user.getUserId());
 
 		Map<String, Object> map = new HashMap<>(2);
-		map.put("token", tokenEntity.getToken());
-		map.put("expire", tokenEntity.getExpireTime().getTime() - System.currentTimeMillis());
+		map.put("success", true);
+		map.put("code", "200");
+		map.put("data", tokenEntity.getToken());
+		map.put("message", "success");
 
 		return map;
 	}

@@ -11,7 +11,6 @@ package io.renren.controller;
 
 import io.renren.common.utils.PageUtils;
 import io.renren.common.utils.R;
-import io.renren.common.validator.ValidatorUtils;
 import io.renren.entity.AppEntity;
 import io.renren.entity.ClientEntity;
 import io.renren.form.AppForm;
@@ -22,7 +21,6 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 

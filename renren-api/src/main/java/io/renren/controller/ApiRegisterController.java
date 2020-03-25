@@ -27,7 +27,7 @@ import java.util.Date;
 /**
  * 注册接口
  *
- * @author Mark sunlightcs@gmail.com
+ * @author will
  */
 @RestController
 @RequestMapping("/api")
@@ -43,8 +43,8 @@ public class ApiRegisterController {
         ValidatorUtils.validateEntity(form);
 
         UserEntity user = new UserEntity();
-        user.setMobile(form.getMobile());
-        user.setUsername(form.getMobile());
+        user.setMobile(form.getUserName());
+        user.setUsername(form.getUserName());
         user.setPassword(DigestUtils.sha256Hex(form.getPassword()));
         user.setCreateTime(new Date());
         userService.save(user);
