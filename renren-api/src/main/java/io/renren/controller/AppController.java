@@ -85,7 +85,7 @@ public class AppController {
     @ApiOperation("app列表")
     public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = appService.queryPage(params);
-        return R.ok().put("page",page);
+        return R.ok(page);
     }
 
     @GetMapping("client/list")

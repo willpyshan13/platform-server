@@ -51,9 +51,7 @@ public class UserServiceImpl extends ServiceImpl<UserDao, UserEntity> implements
 
 		Map<String, Object> map = new HashMap<>(2);
 		map.put("success", true);
-		map.put("code", "200");
 		map.put("data", tokenEntity.getToken());
-		map.put("message", "success");
 
 		return map;
 	}

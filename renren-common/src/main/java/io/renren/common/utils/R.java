@@ -20,8 +20,8 @@ public class R extends HashMap<String, Object> {
 	private static final long serialVersionUID = 1L;
 	
 	public R() {
-		put("code", 0);
-		put("msg", "success");
+		put("code", 200);
+		put("message", "success");
 	}
 	
 	public static R error() {
@@ -48,6 +48,12 @@ public class R extends HashMap<String, Object> {
 	public static R ok(Map<String, Object> map) {
 		R r = new R();
 		r.putAll(map);
+		return r;
+	}
+
+	public static R ok(PageUtils pageUtils){
+		R r = new R();
+		r.put("data",pageUtils);
 		return r;
 	}
 	
