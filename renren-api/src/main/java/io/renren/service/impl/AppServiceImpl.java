@@ -32,7 +32,7 @@ public class AppServiceImpl extends ServiceImpl<AppDao, AppEntity> implements Ap
                         appEntityQueryWrapper.eq("client_id",clientId);
                         return appEntityQueryWrapper;
                     }
-                }));
+                }).orderByDesc("update_time"));
         return new PageUtils(page);
     }
 }
