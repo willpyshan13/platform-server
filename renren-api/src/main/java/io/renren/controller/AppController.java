@@ -21,6 +21,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
@@ -86,6 +87,28 @@ public class AppController {
     public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = appService.queryPage(params);
         return R.ok(page);
+    }
+
+    @PostMapping("remove")
+    @ApiOperation("删除操作")
+    public R deleteApp(@RequestBody Serializable id){
+        if (appService.getById(id)!=null){
+            appService.removeById(id);
+            return R.ok();
+        }else {
+            return R.error("查找失败");
+        }
+    }
+
+    @PostMapping("update")
+    @ApiOperation("更新app操作")
+    public R updateApp(@RequestBody AppEntity form){
+        boolean success = appService.saveOrUpdate(form);
+        if (success) {
+            return R.ok();
+        }else {
+            return R.error();
+        }
     }
 
     @GetMapping("client/list")
