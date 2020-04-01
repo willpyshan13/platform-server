@@ -20,7 +20,7 @@ public class AppForm {
     /**
      * 用户名
      */
-    private String app_name;
+    private String appName;
     /**
      * 版本号
      */
@@ -28,7 +28,7 @@ public class AppForm {
     /**
      * android==1、ios==2
      */
-    private String client;
+    private String clientId;
     /**
      * 渠道
      */
@@ -40,10 +40,10 @@ public class AppForm {
     /**
      * 下载链接
      */
-    private String download_url;
+    private String downloadUrl;
 
     /**
      * 更新日志
      */
-    private String update_log;
+    private String updateLog;
 }

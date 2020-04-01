@@ -46,8 +46,9 @@ public class AppController {
 
         Long clientId = 0L;
         //先判断是否存在相对应的客户端
-        String client = form.getClient();
+        String client = form.getClientId();
         ClientEntity entity = clientService.getByClientName(client);
+
         if (entity!=null) {
             clientId = entity.getClientId();
         }else if (entity == null){
@@ -64,11 +65,11 @@ public class AppController {
         }
 
         AppEntity appEntity = new AppEntity();
-        appEntity.setAppName(form.getApp_name());
+        appEntity.setAppName(form.getAppName());
         appEntity.setChannel(form.getChannel());
         appEntity.setClientId(clientId);
-        appEntity.setDownloadUrl(form.getDownload_url());
-        appEntity.setUpdateLog(form.getUpdate_log());
+        appEntity.setDownloadUrl(form.getDownloadUrl());
+        appEntity.setUpdateLog(form.getUpdateLog());
         appEntity.setVersion(form.getVersion());
         appEntity.setPlatform(form.getPlatform());
         appEntity.setUpdateTime(System.currentTimeMillis());
