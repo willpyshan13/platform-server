@@ -56,7 +56,12 @@ public class R extends HashMap<String, Object> {
 		r.put("data",pageUtils);
 		return r;
 	}
-	
+	public static R ok(Object pageUtils){
+		R r = new R();
+		r.put("data",pageUtils);
+		return r;
+	}
+
 	public static R ok() {
 		return new R();
 	}

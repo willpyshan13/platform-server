@@ -64,6 +64,11 @@ public class AppEntity implements Serializable {
 	private String updateLog;
 
 	/**
+	 * 更新日志
+	 */
+	private String token;
+
+	/**
 	 * 创建时间
 	 */
 	private Long createTime;

@@ -11,6 +11,7 @@ package io.renren.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import io.renren.common.utils.PageUtils;
 import io.renren.entity.AppEntity;
+import io.renren.entity.TokenEntity;
 
 import java.util.Map;
 
@@ -21,4 +22,6 @@ import java.util.Map;
  */
 public interface AppService extends IService<AppEntity> {
     PageUtils queryPage(Map<String, Object> params);
+
+    AppEntity queryByToken(String token);
 }

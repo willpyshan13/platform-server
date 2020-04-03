@@ -29,6 +29,7 @@ CREATE TABLE `tb_app` (
                           `client_id` bigint NOT NULL COMMENT 'client_id',
                           `download_url` varchar(255) NOT NULL COMMENT 'downloadUrl',
                           `update_log` varchar(255) NOT NULL COMMENT 'updateLog',
+                          `token` varchar(255) NOT NULL COMMENT 'token',
                           `create_time` long COMMENT '创建时间',
                           `update_time` long COMMENT '更新时间',
                           PRIMARY KEY (`app_id`)

@@ -7,6 +7,7 @@ import io.renren.common.utils.PageQuery;
 import io.renren.common.utils.PageUtils;
 import io.renren.dao.AppDao;
 import io.renren.entity.AppEntity;
+import io.renren.entity.TokenEntity;
 import io.renren.service.AppService;
 import org.springframework.stereotype.Service;
 
@@ -18,21 +19,27 @@ public class AppServiceImpl extends ServiceImpl<AppDao, AppEntity> implements Ap
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
         String platform = (String) params.get("platform");
-        String clientId = (String)params.get("clientId");
-        if (platform.equals("1")){
+        String clientId = (String) params.get("clientId");
+        if (platform.equals("1")) {
             platform = "android";
-        }else {
+        } else {
             platform = "ios";
         }
         IPage<AppEntity> page = this.page(
                 new PageQuery<AppEntity>().getPage(params),
-                new QueryWrapper<AppEntity>().eq("platform",platform).and(new Function<QueryWrapper<AppEntity>, QueryWrapper<AppEntity>>() {
+                new QueryWrapper<AppEntity>().eq("platform", platform).and(new Function<QueryWrapper<AppEntity>, QueryWrapper<AppEntity>>() {
                     @Override
                     public QueryWrapper<AppEntity> apply(QueryWrapper<AppEntity> appEntityQueryWrapper) {
-                        appEntityQueryWrapper.eq("client_id",clientId);
+                        appEntityQueryWrapper.eq("client_id", clientId);
                         return appEntityQueryWrapper;
                     }
                 }).orderByDesc("update_time"));
         return new PageUtils(page);
     }
+
+    @Override
+    public AppEntity queryByToken(String token) {
+        return this.getOne(new QueryWrapper<AppEntity>().eq("token", token));
+    }
+
 }
