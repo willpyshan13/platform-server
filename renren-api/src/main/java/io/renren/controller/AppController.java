@@ -73,6 +73,7 @@ public class AppController {
         appEntity.setUpdateLog(form.getUpdateLog());
         appEntity.setVersion(form.getVersion());
         appEntity.setPlatform(form.getPlatform());
+        appEntity.setLogoUrl(form.getLogoUrl());
         appEntity.setToken(UUID.randomUUID().toString().replace("-", ""));
         appEntity.setUpdateTime(System.currentTimeMillis());
         appEntity.setCreateTime(System.currentTimeMillis());

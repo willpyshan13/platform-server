@@ -41,6 +41,10 @@ public class AppForm {
      * 下载链接
      */
     private String downloadUrl;
+    /**
+     * 下载链接
+     */
+    private String logoUrl;
 
     /**
      * 更新日志

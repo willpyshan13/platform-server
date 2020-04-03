@@ -59,6 +59,11 @@ public class AppEntity implements Serializable {
 	private String downloadUrl;
 
 	/**
+	 * 图标链接
+	 */
+	private String logoUrl;
+
+	/**
 	 * 更新日志
 	 */
 	private String updateLog;
