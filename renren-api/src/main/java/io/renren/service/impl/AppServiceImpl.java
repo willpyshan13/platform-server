@@ -20,11 +20,6 @@ public class AppServiceImpl extends ServiceImpl<AppDao, AppEntity> implements Ap
     public PageUtils queryPage(Map<String, Object> params) {
         String platform = (String) params.get("platform");
         String clientId = (String) params.get("clientId");
-        if (platform.equals("1")) {
-            platform = "android";
-        } else {
-            platform = "ios";
-        }
         IPage<AppEntity> page = this.page(
                 new PageQuery<AppEntity>().getPage(params),
                 new QueryWrapper<AppEntity>().eq("platform", platform).and(new Function<QueryWrapper<AppEntity>, QueryWrapper<AppEntity>>() {
